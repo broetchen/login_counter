@@ -26,6 +26,7 @@ sub func_reset_button {
     $counter=0;
     $hour_counter=0;
     $label->configure(-text => "$hour_counter:".sprintf("%02d", $counter));
+    $mw->after(60000, \&update_counter);
 }
 
 sub update_counter {
